@@ -40,6 +40,7 @@
 [push]
 	default = upstream
 	followTags = true
+	autoSetupRemote = true
 
 [pull]
 	default = current
@@ -97,7 +98,7 @@
 	force-pop		= !git stash show -p | git apply && git stash drop
 	satsh			= stash
 	githubprofile		= !git config user.name \"Simen Bekkhus\" && git config user.email \"sbekkhus91@gmail.com\"
-	workprofile		= !git config user.name \"Simen Bekkhus\" && git config user.email \"simen@cvpartner.no\" && git config commit.gpgsign false
+	workprofile		= !git config user.name \"Simen Bekkhus\" && git config user.email \"simen@flowcase.com\" && git config commit.gpgsign false
 	stash			= stash --no-gpg-sign
 	diff-copy		= !git --no-pager diff | pbcopy
 	commit-copy		= !git --no-pager diff HEAD^ | pbcopy
@@ -115,6 +116,7 @@
 [fetch]
 	prune = true
 	showForcedUpdates = true
+	fsckobjects = false
 [commit]
 	gpgsign = true
 [transfer]
@@ -132,3 +134,7 @@
 	conflictstyle = diff3
 [advice]
 	skippedCherryPicks = false
+[fsck]
+	zeroPaddedFilemode = ignore
+[receive]
+	fsckobjects = false
